@@ -12,9 +12,9 @@ describe('Authorizer', function () {
     contract = await near.loadContract(accountId, {
       // NOTE: This configuration only needed while NEAR is still in development
       // View methods are read only. They don't modify the state, but usually return some value. 
-      viewMethods: ['whoSaidHi'],
+      viewMethods: ['getResponse'],
       // Change methods can modify the state. But you don't receive the returned value when called.
-      changeMethods: ['sayHi'],
+      changeMethods: ['setResponse'],
       sender: nearConfig.contractName
     });
     window.near = near;
